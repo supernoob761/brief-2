@@ -6,7 +6,6 @@
     <meta name="description" content="I'm Walid Boutuil, a passionate coder who enjoys building games, exploring projects, and learning new technologies.">
     <meta name="keywords" content="Walid Boutuil, web developer, programmer, portfolio, projects, coding, Morocco">
     <meta name="author" content="Walid Boutuil">
-
     <title>Walid Boutuil</title>
     <link rel="stylesheet" href="assets/design.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -22,6 +21,11 @@
     <li><a href="#Projects">PROJECTS</a></li>
     <li><a href="#Contacts">CONTACT</a></li>
   </ul>
+  <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
 </nav>
        <section id="Full_prof">
         <div class="F_P">
@@ -66,7 +70,11 @@
         <h1>ABOUT ME</h1>
     </div>
     <div class="Bottom">
-        <p>The sun dipped below the horizon, painting the sky in shades of crimson and gold as a gentle breeze whispered through the trees. Birds sang their final songs of the day, and the world seemed to pause for a moment, wrapped in the peaceful glow of the approaching night.</p>
+        <p>Hi, I’m Walid Boutuil, a passionate coder from Morocco who loves exploring new technologies and building creative projects. I earned my Baccalaureate in Physics and Chemistry in 2023 and hold a certificate in Electricity, which strengthened my problem-solving and technical skills.
+
+I’m decent at coding and constantly improving — learning fast, especially when I’m working on something I enjoy. I have a strong command of English, which helps me understand documentation, collaborate online, and keep up with global tech trends.
+
+Whether it’s writing code, experimenting with ideas, or tackling new challenges, I’m always eager to grow, create, and turn concepts into reality.</p>
     </div>
     <div class="Skills">
         <div class="headline">
@@ -217,7 +225,15 @@
     </section>
 
 <script src="https://kit.fontawesome.com/a2e0e6a66f.js" crossorigin="anonymous"></script>
+<script>
+  const burger = document.querySelector('.burger');
+  const navLinks = document.querySelector('.Navigation ul');
 
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    navLinks.classList.toggle('open');
+  });
+</script>
     <footer>
         <p>&copy; 2025 Walid Boutuil. All rights reserved.</p>
         <p>Made with ❤️ and Youdev</p>
