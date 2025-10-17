@@ -58,18 +58,32 @@ main, section {
 }
 
 .Navigation ul li {
+  position: relative;
   width: 180px;
-}
-
-.Navigation ul li a {
-  color: var(--white);
-  padding: 10px 25px;
-  text-decoration: none;
+  overflow: hidden;
   transition: all 0.3s ease;
 }
 
-.Navigation ul li a:hover {
-  color: #4b4b4b;
+.Navigation ul li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(212, 57, 193) 0%, rgb(31, 16, 73) 50%, rgb(224, 18, 18) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.Navigation ul li:hover::before {
+  opacity: 1;
+}
+
+.Navigation ul li a {
+  position: relative;
+  color: var(--white);
+  padding: 10px 25px;
+  text-decoration: none;
+  z-index: 1;
 }
 
 /* BURGER ICON */
@@ -90,26 +104,30 @@ main, section {
   height: 3px;
   background: white;
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.6s ease;
 }
 
 .burger.active span:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
+  transform: rotate(-20deg) translateY(4px);
+  background: linear-gradient(90deg, rgba(212 ,57 ,193 ,0.5) 0%, rgb(224 18 18) 100%);
 }
 .burger.active span:nth-child(2) {
-  opacity: 0;
+  transform: scaleX(1.5) translateX(4px);
+background: linear-gradient(90deg, rgba(212 ,57 ,193 ,0.5) 0%, rgb(224 18 18) 100%);
 }
+
 .burger.active span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
+  transform: rotate(20deg) translateY(-4px);
+  background: linear-gradient(90deg, rgba(212 ,57 ,193 ,0.5) 0%, rgb(224 18 18) 100%);
 }
 
 /* RESPONSIVE */
 @media (max-width: 1025px) {
 .Navigation ul {
   position: absolute;
-  top: 60px;
+  top: 50.5px;
   right: 0;
-  background: #2C3E50;
+  background: #303c48;
   width: 200px;
   flex-direction: column;
   align-items: center;
@@ -121,9 +139,8 @@ main, section {
 
 .Navigation ul.open {
   max-height: 400px;
+  gap: 00px;
 }
-
-
   .burger {
     display: flex;
   }
